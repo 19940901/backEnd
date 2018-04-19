@@ -1,0 +1,12 @@
+rand:
+  str: ${random.value} #32位的随机字符串
+  uuid: ${random.uuid} #uuid
+  num: ${random.int(100)} #100内随机整数
+  num0: ${random.int(0,99)} #0-99内的随机整数
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/hadoop
+    username: hadoop
+    password: hadoop200Cb.
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource

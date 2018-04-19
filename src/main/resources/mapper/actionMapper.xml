@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cb.dao.ActionDao">
+
+
+    <!--查询用户个人购物车中的信息-->
+    <select id="getOrderById" parameterType="integer" resultType="com.cb.pojo.Order">
+        select distinct p.startTime,p.sumtime,p.hall_name, p.movie_Name,u.seatNumber,u.state ,u.verifyCode,u.price,u.order_id
+        from
+          plan p left join uorder u on p.plan_id=u.plan_id
+        where
+          u.user_id=#{id}
+    </select>
+
+    <!--根据用户点击查询该电影的场次信息-->
+    <select id="getPlanByName" resultType="com.cb.pojo.Plan">
+        select p.startTime,p.sumTime,m.price,p.hall_Name  from movie m,plan p
+        where movieName=#{name}
+    </select>
+
+    <!--展示座位信息-->
+    <select id="getSeatsById" parameterType="integer" resultType="java.lang.Integer">
+        select seatNumber from hall where plan_id=#{id}
+    </select>
+
+    <!--添加订单信息-->
+    <insert id="addOrder" parameterType="com.cb.pojo.Uorder">
+        INSERT  INTO  uorder(state,verifyCode,movie_id,plan_id,seatNumber,user_id)
+        VALUES (#{state},#{verifyCode},#{movie_id},#{plan_id},#{seatNumber},#{user_id})
+    </insert>
+
+    <!--根据plan_id插入座位hall-->
+    <insert id="addSeat" parameterType="integer">
+        INSERT INTO  hall(plan_id,seatNumber) VALUES (#{plan_id},#{seatNumber})
+    </insert>
+
+    <!--付款后生成取票码-->
+    <insert id="updateCode">
+        update uorder set verifyCode=#{code},state='付款' where order_id=#{id}
+    </insert>
+
+
+</mapper>

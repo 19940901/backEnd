@@ -1,0 +1,13 @@
+action
+    orders:根据用户id获取用户购物车中的信息
+    plans:根据电影名称获取场次信息
+    seats:根据plan_id查询剩余座位
+    addOrder:插入uorder与hall
+    code:更新verifyCode
+
+
+user
+    add:添加用户
+    find:根据id查找用户
+    update:根据id更新用户名
+    delete:根据id想、删除用户名
