@@ -3,6 +3,7 @@ action
     plans:根据电影名称获取场次信息
     seats:根据plan_id查询剩余座位
     addOrder:插入uorder与hall
+        初始order state为未付款，verifyCode为null
     code:更新verifyCode
 
 

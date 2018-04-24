@@ -68,6 +68,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
+        <!--tomcat运行，本地运行注释掉-->
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <!--<dependency>-->
             <!--<groupId>com.fasterxml.jackson.core</groupId>-->
@@ -92,6 +93,7 @@
             <!--<version>2.9.0</version>-->
         <!--</dependency>-->
 
+        <!--本地运行，tomcat运行注释掉-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -134,6 +136,13 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.0.5</version>
+        </dependency>
+
+        <!--web配置-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
 

@@ -22,4 +22,6 @@ public interface UserDao {
 
     void deleteUser(String id);
 
+    UserInfo login(@Param("name") String name,@Param("password") String password);
+
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                    url: "/user/userInfo",
+                    type: "POST",
+                    success: function (data) {
+                        var m = eval('(' + data + ')');
+                        //alert(m.d);
+                      // alert(m.user_name);
+                       $("h1").html("welcome back lord  : "+m.user_name);
+
+                    }
+                }
+            );
+        });
+
+
+    </script>
+    <title>welcome</title>
+</head>
+<body>
+<div>
+    <p>
+    <h1>${message}</h1>
+    </p>
+</div>
+</body>
+</html>

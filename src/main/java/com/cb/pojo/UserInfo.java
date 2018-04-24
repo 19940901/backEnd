@@ -1,11 +1,13 @@
 package com.cb.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+@Component
 public class UserInfo {
 
     private Integer user_id;

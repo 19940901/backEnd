@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css"/>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#login").click(function () {
+                var username = $("#username").val();
+                var password = $("#password").val();
+
+
+                if ('' == username) {
+                    $("#username").css("border-color", "red");
+                    $("#username").css("border-width", "2px");
+                    $("#username").focus();
+                } else if ('' == password) {
+                    $("#password").css("border-color", "red");
+                    $("#password").css("border-width", "2px");
+                    $("#password").focus();
+                }
+
+                else {
+                    $.ajax({
+                        url: "/user/login",
+                        type: "POST",
+                        dataType: "text",
+                        data: {
+                            "username": username,
+                            "password": password,
+
+                        },
+
+                        success: function (data) {
+                            var m = eval('(' + data + ')');
+                            //alert(m.d);
+                            if (m.message == "success") {
+                                window.location.href = 'success';
+                            } else {
+                                alert(m.message)
+                            }
+
+
+                        }
+                    });
+                }
+            });
+
+        })
+        ;
+
+
+    </script>
+    <title>login</title>
+</head>
+<body>
+<div id="main">
+    <form>
+        <fieldset>
+            <p>
+                <label>username:</label>
+                <input type="text" name="username" value="12345" id="username"/>
+            </p>
+            <p>
+                <label>password:</label>
+                <input type="password" name="password" id="password"/>
+            </p>
+            <input type="button" name="提交" value="sign in" id="login"/>
+        </fieldset>
+    </form>
+
+</div>
+</body>
+</html>

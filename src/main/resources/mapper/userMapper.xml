@@ -18,4 +18,10 @@
         selete FROM user where user_id=#{id}
     </delete>
 
+
+    <!--login根据密码查询用户，如果存在则将用户名与密码存到session中-->
+
+    <select id="login" resultType="com.cb.pojo.UserInfo">
+        select user_id,user_name,md5(password) from user where user_name=#{name} and password=md5(#{password})
+    </select>
 </mapper>

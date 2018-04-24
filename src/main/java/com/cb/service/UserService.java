@@ -33,6 +33,7 @@ public class UserService {
         userDao.deleteUser(id);
     }
 
+    public UserInfo login(String name,String pwd){return userDao.login(name,pwd);}
 
 
 }
