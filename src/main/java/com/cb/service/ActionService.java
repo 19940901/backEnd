@@ -31,7 +31,7 @@ public class ActionService {
         return actionDao.getPlanByName(name);
     }
 
-    public List<Integer> getSeats(int id){
+    public List<String> getSeats(String id){
         return actionDao.getSeatsById(id);
     }
 
@@ -39,7 +39,7 @@ public class ActionService {
         actionDao.addOrder(u);
     }
 
-    public void addSeats(int plan_id,int seatNumber){
+    public void addSeats(int plan_id,String seatNumber){
         actionDao.addSeat(plan_id,seatNumber);
     }
 

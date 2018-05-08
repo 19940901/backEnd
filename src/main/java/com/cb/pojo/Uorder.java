@@ -13,7 +13,7 @@ public class Uorder {
     private String verifyCode;
     private int price;
     private int plan_id;
-    private int seatNumber;
+    private String seatNumber;
     private int user_id;
 
     public String getState() {
@@ -48,11 +48,11 @@ public class Uorder {
         this.plan_id = plan_id;
     }
 
-    public int getSeatNumber() {
+    public String getSeatNumber() {
         return seatNumber;
     }
 
-    public void setSeatNumber(int seatNumber) {
+    public void setSeatNumber(String seatNumber) {
         this.seatNumber = seatNumber;
     }
 

@@ -13,7 +13,7 @@ public class Order {
     private String movie_Name;
     private Integer price;
 
-    private Integer seatNumber;
+    private String seatNumber;
 
     private String startTime;
 
@@ -48,11 +48,11 @@ public class Order {
         this.price = price;
     }
 
-    public Integer getSeatNumber() {
+    public String getSeatNumber() {
         return seatNumber;
     }
 
-    public void setSeatNumber(Integer seatNumber) {
+    public void setSeatNumber(String seatNumber) {
         this.seatNumber = seatNumber;
     }
 

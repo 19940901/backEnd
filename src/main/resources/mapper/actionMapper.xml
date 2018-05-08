@@ -14,23 +14,23 @@
 
     <!--根据用户点击查询该电影的场次信息-->
     <select id="getPlanByName" resultType="com.cb.pojo.Plan">
-        select p.startTime,p.sumTime,m.price,p.hall_Name  from movie m,plan p
-        where movieName=#{name}
+        select p.startTime,p.sumTime,m.price,p.hall_Name ,p.plan_id from movie m,plan p
+        where p.movie_Name=#{name} and m.movieName=#{name}
     </select>
 
     <!--展示座位信息-->
-    <select id="getSeatsById" parameterType="integer" resultType="java.lang.Integer">
+    <select id="getSeatsById" resultType="java.lang.String">
         select seatNumber from hall where plan_id=#{id}
     </select>
 
     <!--添加订单信息-->
     <insert id="addOrder" parameterType="com.cb.pojo.Uorder">
-        INSERT  INTO  uorder(state,verifyCode,movie_id,plan_id,seatNumber,user_id)
-        VALUES (#{state},#{verifyCode},#{movie_id},#{plan_id},#{seatNumber},#{user_id})
+        INSERT  INTO  uorder(state,verifyCode,price,plan_id,seatNumber,user_id)
+        VALUES (#{state},#{verifyCode},#{price},#{plan_id},#{seatNumber},#{user_id})
     </insert>
 
     <!--根据plan_id插入座位hall-->
-    <insert id="addSeat" parameterType="integer">
+    <insert id="addSeat" >
         INSERT INTO  hall(plan_id,seatNumber) VALUES (#{plan_id},#{seatNumber})
     </insert>
 

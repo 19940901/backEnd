@@ -9,10 +9,19 @@ package com.cb.pojo;
  **/
 
 public class Plan {
+    private String plan_id;
     private String startTime;
     private String sumTime;
     private int price;
     private String hall_Name;
+
+    public String getPlan_id() {
+        return plan_id;
+    }
+
+    public void setPlan_id(String plan_id) {
+        this.plan_id = plan_id;
+    }
 
     public String getStartTime() {
         return startTime;

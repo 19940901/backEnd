@@ -26,13 +26,13 @@ public interface ActionDao {
     List<Plan> getPlanByName(String name);
 
     //根据plan信息显示座位信息
-    List<Integer> getSeatsById(int id);
+    List<String> getSeatsById(String id);
 
     //新增订单
     void  addOrder(Uorder u);
 
     //增加订单同时添加seat到hall
-    void addSeat(@Param("plan_id") int plan_id, @Param("seatNumber") int seatNumber);
+    void addSeat(@Param("plan_id") int plan_id, @Param("seatNumber") String seatNumber);
 
     //生成付款码
     void updateCode(@Param("code") String code,@Param("id") int id);

@@ -20,7 +20,7 @@ public class webConfig implements WebMvcConfigurer {
     //处理图片请求路径
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry r) {
-        r.addResourceHandler("/static/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX + "/static/");
+       // r.addResourceHandler("/static/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX + "/static/");
 
     }
 }

@@ -98,7 +98,8 @@ dao层一个接口@repository，service层一个类@autowired注入dao层接口�
 @ControllerAdvice 统一异常处理
 @aspect 切面类
 
-
+@restContoller  //适用返回非静态资源
+@controller  //适用于web
 
 
 
