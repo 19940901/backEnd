@@ -9,7 +9,7 @@ rand:
 spring:
   datasource:
     url: jdbc:mysql://119.23.213.11:3306/hadoop
-    username: hadoop
-    password: hadoop200Cb.
+    username:
+    password: 
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
